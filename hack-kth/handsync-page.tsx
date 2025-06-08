@@ -25,40 +25,39 @@ export default function HandSyncPage() {
 
   const groups = [
     {
-      title: "Learning Group",
-      hours: 2,
-      people: 3,
-      tag: null,
-    },
-    {
-      title: "Let's Get Better",
-      hours: 2,
-      people: 4,
-      tag: null,
-    },
-    {
-      title: "Group Study",
-      hours: 3,
-      people: 7,
+      title: "ASL Basics Meetup",
+      hours: 1,
+      people: 8,
       tag: "BEGINNER",
     },
     {
-      title: "Training",
-      hours: 4,
+      title: "Stockholm Sign Language Exchange",
+      hours: 2,
+      people: 12,
+      tag: null,
+    },
+    {
+      title: "Medical Signs Practice",
+      hours: 3,
       people: 5,
       tag: "ADVANCED",
     },
     {
-      title: "Group Study",
+      title: "Conversational Practice",
+      hours: 1,
+      people: 6,
+      tag: null,
+    },
+    {
+      title: "KTH Student Sign Club",
       hours: 2,
-      people: 15,
+      people: 18,
       tag: null,
     },
   ]
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-teal-500 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2 text-white">
           <Snowflake className="w-6 h-6" />
@@ -80,9 +79,7 @@ export default function HandSyncPage() {
       </header>
 
       <div className="flex">
-        {/* Sidebar */}
         <aside className="w-64 p-6 bg-white border-r">
-          {/* Duration Filter */}
           <div className="mb-8">
             <h3 className="font-medium text-gray-900 mb-4 flex items-center justify-between">
               Duration
@@ -109,7 +106,6 @@ export default function HandSyncPage() {
             </div>
           </div>
 
-          {/* Difficulty Filter */}
           <div>
             <h3 className="font-medium text-gray-900 mb-4 flex items-center justify-between">
               Difficulty
@@ -137,7 +133,6 @@ export default function HandSyncPage() {
           </div>
         </aside>
 
-        {/* Main Content */}
         <main className="flex-1 p-6">
           <div className="space-y-4 max-w-2xl">
             {groups.map((group, index) => (
@@ -173,7 +168,6 @@ export default function HandSyncPage() {
               </Card>
             ))}
 
-            {/* Load More Button */}
             <div className="pt-4">
               <Button variant="outline" className="w-full text-teal-600 border-teal-200 hover:bg-teal-50">
                 Load More
@@ -185,3 +179,4 @@ export default function HandSyncPage() {
     </div>
   )
 }
+

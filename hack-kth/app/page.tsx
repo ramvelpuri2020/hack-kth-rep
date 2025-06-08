@@ -23,7 +23,7 @@ export default function HomePage() {
         </div>
         
         <div className="mt-16">
-          <p className="text-lg opacity-75">WebRTC-powered video calling for HandSync practice sessions</p>
+          <p className="text-lg opacity-75">Real-time sign language practice sessions</p>
         </div>
       </div>
     </div>

@@ -44,10 +44,8 @@ export default function VideoCall() {
           </div>
         )}
 
-        {/* Controls */}
         <div className="bg-white rounded-lg p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Start Webcam */}
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-3">1. Start Your Camera</h3>
               <button
@@ -63,7 +61,6 @@ export default function VideoCall() {
               </button>
             </div>
 
-            {/* Create Room */}
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-3">2. Create Room</h3>
               <button
@@ -95,7 +92,6 @@ export default function VideoCall() {
               )}
             </div>
 
-            {/* Join Room */}
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-3">3. Join Room</h3>
               <div className="space-y-2">
@@ -122,7 +118,6 @@ export default function VideoCall() {
             </div>
           </div>
 
-          {/* Connection Status */}
           {isConnected && (
             <div className="text-center mt-4">
               <span className="bg-green-100 text-green-800 px-4 py-2 rounded-lg">
@@ -132,9 +127,7 @@ export default function VideoCall() {
           )}
         </div>
 
-        {/* Video Streams */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          {/* Local Video */}
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-lg font-semibold mb-3 text-center">Your Video</h3>
             <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden">
@@ -153,7 +146,6 @@ export default function VideoCall() {
             </div>
           </div>
 
-          {/* Remote Video */}
           <div className="bg-white rounded-lg p-4">
             <h3 className="text-lg font-semibold mb-3 text-center">Remote Video</h3>
             <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden">
@@ -172,7 +164,6 @@ export default function VideoCall() {
           </div>
         </div>
 
-        {/* Hangup */}
         {(localStream || roomId) && (
           <div className="text-center">
             <button
@@ -184,7 +175,6 @@ export default function VideoCall() {
           </div>
         )}
 
-        {/* Back to Home */}
         <div className="text-center mt-6">
           <a
             href="/"

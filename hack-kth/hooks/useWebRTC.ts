@@ -43,15 +43,11 @@ export const useWebRTC = () => {
         localVideoRef.current.srcObject = stream;
       }
 
-      // Initialize peer connection
       pcRef.current = new RTCPeerConnection(servers);
       
-      // Add tracks to peer connection
       stream.getTracks().forEach((track) => {
         pcRef.current?.addTrack(track, stream);
       });
-
-      // Setup remote stream
       const remoteStreamObj = new MediaStream();
       setRemoteStream(remoteStreamObj);
 
@@ -96,14 +92,11 @@ export const useWebRTC = () => {
 
       setRoomId(roomRef.id);
 
-      // Collect ICE candidates
       pcRef.current.onicecandidate = (event) => {
         if (event.candidate) {
           addDoc(offerCandidates, event.candidate.toJSON());
         }
       };
-
-      // Create offer
       const offerDescription = await pcRef.current.createOffer();
       await pcRef.current.setLocalDescription(offerDescription);
 
@@ -114,7 +107,6 @@ export const useWebRTC = () => {
 
       await setDoc(roomRef, { offer });
 
-      // Listen for remote answer
       onSnapshot(roomRef, (snapshot) => {
         const data = snapshot.data();
         if (!pcRef.current?.currentRemoteDescription && data?.answer) {
@@ -122,8 +114,6 @@ export const useWebRTC = () => {
           pcRef.current.setRemoteDescription(answerDescription);
         }
       });
-
-      // Listen for remote ICE candidates
       onSnapshot(answerCandidates, (snapshot) => {
         snapshot.docChanges().forEach((change) => {
           if (change.type === 'added') {

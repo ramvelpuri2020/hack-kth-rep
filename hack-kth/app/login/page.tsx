@@ -20,8 +20,7 @@ export default function LoginPage() {
           <h1 className="text-4xl font-bold mb-12">Anytime.</h1>
 
           <p className="text-lg">
-            We offer <span className="font-bold">peer-to-peer</span> sign language exchange with{" "}
-            <span className="font-bold">real-time translation</span>. Connect with others though our website.
+            Practice sign language with others through video calls. Built by students for the KTH hackathon.
           </p>
         </div>
 
